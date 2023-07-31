@@ -7,7 +7,7 @@ class UsersTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final _userBloc = BlocProvider.of<UserBloc>(context);
+    final _userBloc = BlocProvider.getBloc<UserBloc>(); //BlocProvider.of<UserBloc>(context);
 
     return Column(
       children: <Widget>[

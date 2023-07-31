@@ -1,5 +1,6 @@
 import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:finalmba/blocs/orders_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:finalmba/blocs/user_bloc.dart';
 
@@ -12,9 +13,9 @@ class OrderHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final _userBloc = BlocProvider.of<UserBloc>(context);
+    final _userBloc = BlocProvider.getBloc<UserBloc>(); //of<UserBloc>(context);
 
-    final _user = _userBloc.getUser(order.data["clientId"]);
+    final _user = _userBloc. getUser(order.data["clientId"]);
 
     return Row(
       children: <Widget>[
@@ -38,3 +39,5 @@ class OrderHeader extends StatelessWidget {
     );
   }
 }
+
+

@@ -7,7 +7,7 @@ class OrdersTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final _ordersBloc = BlocProvider.of<OrdersBloc>(context);
+    final _ordersBloc = BlocProvider.getBloc<OrdersBloc>();
 
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 16),

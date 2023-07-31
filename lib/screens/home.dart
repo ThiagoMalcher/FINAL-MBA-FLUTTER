@@ -29,6 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     _userBloc = UserBloc();
     _ordersBloc = OrdersBloc();
+
   }
 
 
@@ -77,10 +78,14 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       body: SafeArea(
-        child: BlocProvider<UserBloc>(
-          bloc: _userBloc,
-          child: BlocProvider<OrdersBloc>(
-            bloc: _ordersBloc,
+        child: BlocProvider(
+          blocs:[
+            Bloc((i) => _userBloc),
+          ],
+          child: BlocProvider(
+            blocs:[
+              Bloc((i) => _ordersBloc),
+            ],
             child: PageView(
               controller: _pageController,
               onPageChanged: (p){

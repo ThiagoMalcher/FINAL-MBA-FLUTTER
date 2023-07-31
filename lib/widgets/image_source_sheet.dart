@@ -12,9 +12,10 @@ class ImageSourceSheet extends StatelessWidget {
 
   void imageSelected(File image) async {
     if(image != null){
-      File croppedImage = await ImageCropper().cropImage(
+      File croppedImage = await ImageCropper.cropImage(
         sourcePath: image.path,
-        aspectRatio: CropAspectRatio(ratioX: 1.0, ratioY: 1.0),
+        ratioX: 1.0,
+        ratioY: 1.0,
       );
       onImageSelected(croppedImage);
     }
